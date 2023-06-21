@@ -4,10 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "github:danielgatis/puppeteer-recaptcha-solver",
+  "packageManager": "yarn@4.0.0-rc.45",
+  "scripts": {
+    "start:original": "node ./examples/demo-wo-proxy.js",
+    "od": "yarn outdated"
+  },
   "dependencies": {
-    "puppeteer": "^16.1.0",
-    "puppeteer-extra": "^3.3.4",
-    "puppeteer-extra-plugin-stealth": "^2.11.0",
-    "undici": "^5.21.0"
+    "puppeteer": "^20.7.3",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "undici": "^5.22.1"
+  },
+  "devDependencies": {
+    "@yarnpkg/sdks": "^3.0.0-rc.45",
+    "typescript": "^5.1.3"
   }
 }
