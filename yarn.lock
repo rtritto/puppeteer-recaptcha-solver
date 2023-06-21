@@ -41,7 +41,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker-content@npm:^1.26.6":
+"@cliqz/adblocker-content@npm:^1.23.8, @cliqz/adblocker-content@npm:^1.26.6":
   version: 1.26.6
   resolution: "@cliqz/adblocker-content@npm:1.26.6"
   dependencies:
@@ -54,6 +54,19 @@ __metadata:
   version: 1.26.6
   resolution: "@cliqz/adblocker-extended-selectors@npm:1.26.6"
   checksum: 7ea1a692a18ecdf23ed5482f38ffddb0a8a4af9a6b06b7cf6ebc759a5604d21ae73fbe7d38e09b799ea1de37692091196294550fe87fc577072cec1a3ee07a9d
+  languageName: node
+  linkType: hard
+
+"@cliqz/adblocker-puppeteer@npm:1.23.8":
+  version: 1.23.8
+  resolution: "@cliqz/adblocker-puppeteer@npm:1.23.8"
+  dependencies:
+    "@cliqz/adblocker": "npm:^1.23.8"
+    "@cliqz/adblocker-content": "npm:^1.23.8"
+    tldts-experimental: "npm:^5.6.21"
+  peerDependencies:
+    puppeteer: ">5"
+  checksum: 9c3393c77238dfae5811811628c3a851e9a1b00396e37f69a4893e8cace271ed3c3b289dec261cb784706a8fe1618a0bbf3fe1303b3fbfa85489fae5a26dbb3e
   languageName: node
   linkType: hard
 
@@ -70,7 +83,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cliqz/adblocker@npm:^1.26.6":
+"@cliqz/adblocker@npm:^1.23.8, @cliqz/adblocker@npm:^1.26.6":
   version: 1.26.6
   resolution: "@cliqz/adblocker@npm:1.26.6"
   dependencies:
@@ -1772,7 +1785,7 @@ free-proxy-generator@rtritto/free-proxy-generator:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.6.11":
+"node-fetch@npm:^2.6.0, node-fetch@npm:^2.6.11":
   version: 2.6.11
   resolution: "node-fetch@npm:2.6.11"
   dependencies:
@@ -2006,6 +2019,29 @@ free-proxy-generator@rtritto/free-proxy-generator:
   languageName: node
   linkType: hard
 
+"puppeteer-extra-plugin-adblocker@npm:^2.13.6":
+  version: 2.13.6
+  resolution: "puppeteer-extra-plugin-adblocker@npm:2.13.6"
+  dependencies:
+    "@cliqz/adblocker-puppeteer": "npm:1.23.8"
+    debug: "npm:^4.1.1"
+    node-fetch: "npm:^2.6.0"
+    puppeteer-extra-plugin: "npm:^3.2.3"
+  peerDependencies:
+    puppeteer: "*"
+    puppeteer-core: "*"
+    puppeteer-extra: "*"
+  peerDependenciesMeta:
+    puppeteer:
+      optional: true
+    puppeteer-core:
+      optional: true
+    puppeteer-extra:
+      optional: true
+  checksum: 263ccc39739185900e7925c0a36f2aba908e3bb16a7d703744ac09c13f57443b4d04972d742457b913de4a007ef06ac9eaf0362b7f465312fe618969de6e7757
+  languageName: node
+  linkType: hard
+
 "puppeteer-extra-plugin-stealth@npm:^2.11.2":
   version: 2.11.2
   resolution: "puppeteer-extra-plugin-stealth@npm:2.11.2"
@@ -2116,6 +2152,7 @@ free-proxy-generator@rtritto/free-proxy-generator:
     free-proxy-generator: rtritto/free-proxy-generator
     puppeteer: "npm:^20.7.3"
     puppeteer-extra: "npm:^3.3.6"
+    puppeteer-extra-plugin-adblocker: "npm:^2.13.6"
     puppeteer-extra-plugin-stealth: "npm:^2.11.2"
     puppeteer-extra-plugin-user-data-dir: "npm:^2.4.1"
     puppeteer-extra-plugin-user-preferences: "npm:^2.4.1"
@@ -2413,10 +2450,26 @@ free-proxy-generator@rtritto/free-proxy-generator:
   languageName: node
   linkType: hard
 
+"tldts-core@npm:^5.7.112":
+  version: 5.7.112
+  resolution: "tldts-core@npm:5.7.112"
+  checksum: f45ebdcb504dd77cae8303ee730a3bc5be3f0de0dad84293f966a411e4298a3852da1f6223d34b4c184f34e01ea9b5e05ee912fc4666f350b154f1b151f75b30
+  languageName: node
+  linkType: hard
+
 "tldts-core@npm:^6.0.8":
   version: 6.0.8
   resolution: "tldts-core@npm:6.0.8"
   checksum: eb80a1f0f0e21f6cfc8dbb1969c98baa8fafeed1788a59e0c01e5b18f31dc235e80f73ede143d2d411fcf1c5e275a7219108a4f4e2f99e04347537022db95430
+  languageName: node
+  linkType: hard
+
+"tldts-experimental@npm:^5.6.21":
+  version: 5.7.112
+  resolution: "tldts-experimental@npm:5.7.112"
+  dependencies:
+    tldts-core: "npm:^5.7.112"
+  checksum: 03121887f2ef61ce253ca916060cb124f80a5a03a5d84b3a263964b04e968fde1a3a4cabb4bfffa5e1115e41cef7234353bf57a0f0020a321dcaade52d0c1dc7
   languageName: node
   linkType: hard
 

@@ -2,6 +2,8 @@
 
 import path from 'node:path'
 import url from 'node:url'
+// Ads Blocker Plugin 1)
+import { DEFAULT_INTERCEPT_RESOLUTION_PRIORITY } from 'puppeteer'
 import _puppeteer from 'puppeteer-extra'
 import StealthPlugin from 'puppeteer-extra-plugin-stealth'
 import UserPreferences from 'puppeteer-extra-plugin-user-preferences'
@@ -14,7 +16,8 @@ import solve from '../index.mjs'
 // https://github.com/berstend/puppeteer-extra/issues/748
 const puppeteer = _puppeteer.default
 
-// import AdblockerPlugin from 'puppeteer-extra-plugin-adblocker'
+// Ads Blocker Plugin 2)
+import AdblockerPlugin from 'puppeteer-extra-plugin-adblocker'
 
 // import { hookBlocker } from '../utils/adblockerUtils.mjs'
 
@@ -28,14 +31,18 @@ puppeteer.use(UserPreferences({
     // 	webkit: { webprefs: { default_font_size: 22 } }
   }
 }))
-// puppeteer.use(AdblockerPlugin({
-//   blockTrackers: true,
-//   cacheDir: path.join(__dirname, '../extensions'),
-//   useCache: true
-// }))
+// Ads Blocker Plugin 3)
+puppeteer.use(AdblockerPlugin({
+  // Optionally enable Cooperative Mode for several request interceptors
+  interceptResolutionPriority: DEFAULT_INTERCEPT_RESOLUTION_PRIORITY,
+  blockTrackers: true,
+  cacheDir: path.join(__dirname, '../extensions'),
+  useCache: true
+}))
 
+// Custom AdsBlocker 1)
 // const pathExtensionUBlock = path.join(__dirname, '../extensions/uBlock-Origin-1.33.2')
-const pathExtensionUBlock = path.join(__dirname, '../extensions/uBlock-Origin-1.43.0_40')
+// const pathExtensionUBlock = path.join(__dirname, '../extensions/uBlock-Origin-1.43.0_40')
 
 /**
  * @typedef {import('puppeteer').Browser} Browser
@@ -82,7 +89,8 @@ const launchBrowser = async (proxy) => {
     // ignoreHTTPSErrors: true,
     ignoreDefaultArgs: ["--disable-extensions"],
     args: [
-      `--disable-extensions-except=${pathExtensionUBlock}`, `--load-extension=${pathExtensionUBlock}`,
+      // Custom AdsBlocker 2)
+      // `--disable-extensions-except=${pathExtensionUBlock}`, `--load-extension=${pathExtensionUBlock}`,
       //'--window-size=650,700',
       //'--window-size=360,500',
       //'--window-position=000,000',
