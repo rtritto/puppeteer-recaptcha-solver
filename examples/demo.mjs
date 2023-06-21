@@ -1,9 +1,9 @@
-const puppeteer = require('puppeteer-extra')
-const pluginStealth = require('puppeteer-extra-plugin-stealth')
+import puppeteer from 'puppeteer-extra'
+import pluginStealth from 'puppeteer-extra-plugin-stealth'
 
-const solve = require('../index.js')
+import solve from '../index.mjs'
 
-async function run () {
+async function run() {
   puppeteer.use(pluginStealth())
 
   const browser1 = await puppeteer.launch({

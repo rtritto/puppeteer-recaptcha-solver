@@ -1,4 +1,4 @@
-const undici = require('undici')
+import undici from 'undici'
 
 function rdn(min, max) {
   min = Math.ceil(min)
@@ -23,7 +23,7 @@ async function solve(page) {
 
     const challenge = await page.waitForFunction(() => {
       let iframe = document.querySelector('iframe[src*="api2/anchor"]')
-      if(iframe == null || !!iframe.contentWindow.document.querySelector('#recaptcha-anchor[aria-checked="true"]')){
+      if (iframe == null || !!iframe.contentWindow.document.querySelector('#recaptcha-anchor[aria-checked="true"]')) {
         return false
       }
 
@@ -98,7 +98,7 @@ async function solve(page) {
       try {
         await page.waitForFunction(() => {
           const iframe = document.querySelector('iframe[src*="api2/anchor"]')
-          if(iframe == null || !!iframe.contentWindow.document.querySelector('#recaptcha-anchor[aria-checked="true"]')){
+          if (iframe == null || !!iframe.contentWindow.document.querySelector('#recaptcha-anchor[aria-checked="true"]')) {
             return true
           }
         }, { timeout: 5000 })
@@ -114,4 +114,4 @@ async function solve(page) {
   }
 }
 
-module.exports = solve
+export default solve

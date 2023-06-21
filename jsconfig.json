@@ -1,6 +1,13 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
-    "checkJs": true
-  }
+    "checkJs": true,
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext"
+  },
+  "include": [
+    "navigations",
+    "utils"
+  ]
 }
