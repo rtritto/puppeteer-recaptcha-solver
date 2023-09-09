@@ -1114,11 +1114,11 @@ __metadata:
 
 "free-proxy-generator@github:rtritto/free-proxy-generator":
   version: 1.0.0
-  resolution: "free-proxy-generator@https://github.com/rtritto/free-proxy-generator.git#commit=2f1c77e274ac4175c9331b17166754b8ecf1d36d"
+  resolution: "free-proxy-generator@https://github.com/rtritto/free-proxy-generator.git#commit=5e2607bf8d263a5edcafc2c4b3f11ac04074399e"
   dependencies:
-    node-html-parser: "npm:^6.1.5"
-    undici: "npm:^5.21.0"
-  checksum: d303b96c979207f5509f6268768ea0d4ac1e83179dc2cfab3e0fe808b6d125ad53c11b56351e04bb01ebdcca5f67000fa82dd736803ae4e5f4fdded85fd074b3
+    node-html-parser: "npm:^6.1.6"
+    undici: "npm:^5.23.0"
+  checksum: d758ac3b4e6017de4f31e36b04040352aa7a3652fdc84045ce258b6139eb7fcc47d1ea6e716f1f5ff915f8d2ad80f8f0257cf55f1ab77090927f1a44f4bd31c6
   languageName: node
   linkType: hard
 
@@ -1718,7 +1718,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-html-parser@npm:^6.1.5":
+"node-html-parser@npm:^6.1.6":
   version: 6.1.6
   resolution: "node-html-parser@npm:6.1.6"
   dependencies:
@@ -2403,7 +2403,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^5.21.0, undici@npm:^5.23.0":
+"undici@npm:^5.23.0":
   version: 5.23.0
   resolution: "undici@npm:5.23.0"
   dependencies:

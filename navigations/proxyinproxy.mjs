@@ -10,6 +10,7 @@ import ProxiesApi from 'free-proxy-generator'
 import DeepbridApi from '../utils/DeepbridApi.mjs'
 import fileUtils from '../utils/fileUtils.mjs'
 import solve from '../index.mjs'
+import configProxies from '../config/proxies.mjs'
 
 // https://github.com/berstend/puppeteer-extra/issues/748
 const puppeteer = _puppeteer.default
@@ -54,6 +55,7 @@ let browser
 let proxies
 // let nProxy = 31
 let nProxy = 0
+let TOTAL_PROXIES
 const LINK = [
   'https://uptobox.com/<ID>'
   // 'http://www.easybytez.com/<ID>'
@@ -203,7 +205,7 @@ const firstPartDownload = async (proxy) => {
   } catch (e) {
     console.error('ERROR', e)
     nProxy++
-    if (nProxy == 100) {
+    if (nProxy === TOTAL_PROXIES) {
       nProxy = 0
     }
     await browser.close()
@@ -224,7 +226,7 @@ const firstAxiosDownload = async (proxy) => {
   } catch (e) {
     // console.error('ERROR', e)
     nProxy++
-    nProxy == 100 && (nProxy = 0)
+    nProxy === TOTAL_PROXIES && (nProxy = 0)
     await a()
   }
 }
@@ -286,8 +288,7 @@ const a = async () => {
 
   if (LINK.length > 0) {
     nProxy++
-    nProxy == 100 && (nProxy = 0)
-
+    nProxy === TOTAL_PROXIES && (nProxy = 0)
     console.log('Call with LINK', LINK[0])
 
     await a()
@@ -299,6 +300,12 @@ const a = async () => {
 
 const start = async () => {
   proxies = await ProxiesApi.FreeProxyListNetApi.getProxies()
+  // proxies = await ProxiesApi.FreeProxyListComApi.getProxies()
+  // proxies = await ProxiesApi.FreeProxyWorldApi.getProxies()
+  // proxies = await ProxiesApi.ProxyScraperApi.getProxies()
+  // proxies = configProxies.FreeProxyListNet
+  TOTAL_PROXIES = proxies.length
+  console.log(`Total proxies: ${TOTAL_PROXIES}`)
   // const { proxy1Arr } = require('../config/proxies')
   // proxies = proxy1Arr
 

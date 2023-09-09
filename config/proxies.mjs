@@ -1,5 +1,5 @@
 export default {
-  proxy1Arr: [
+  FreeProxyListNet: [
     { host: '23.227.199.70', port: 3128 },      // 28	US
     { host: '67.43.224.147', port: 3128 },      // 11
     { host: '149.255.35.42', port: 3128 },      // 27	US
@@ -167,5 +167,8 @@ export default {
     { host: '103.178.42.10', port: 8181, code: 'ID', anonymity: 'anonymous' },      // 23
     { host: '45.182.190.186', port: 999, code: 'CO', anonymity: 'anonymous' },      // 28
     { host: '64.225.4.29', port: 9499, code: 'US', country: 'United States', anonymity: 'elite proxy' }  // 4
+  ],
+  FreeProxyListCom: [
+    { host: '190.247.93.231', port: 8080, country: 'Argentina' }
   ]
 }
